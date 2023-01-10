@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/mokan-r/Team00";
+
+package protobuf;
+
+service TransmissionService {
+  rpc FetchTransmission (Request) returns (stream Response) {}
+}
+
+message Request {
+  int32 id = 1;
+}
+
+message Response {
+  string session_id = 1;
+  double frequency = 2;
+  string timestamp = 3;
+}
